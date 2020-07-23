@@ -1,0 +1,10 @@
+package top.zcwfeng.flutterhybirddemo
+
+import android.app.Application
+
+class MyApp : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+    }
+}

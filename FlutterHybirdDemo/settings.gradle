@@ -1,0 +1,7 @@
+include ':app'
+rootProject.name = "FlutterHybirdDemo"
+setBinding(new Binding([gradle:this]))
+evaluate(new File(settingsDir.parentFile,
+    "${rootProject.name}/flutter_zcw/.android/include_flutter.groovy"
+))
+include ':flutter_zcw'

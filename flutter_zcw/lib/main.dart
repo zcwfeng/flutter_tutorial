@@ -1,6 +1,49 @@
+import 'dart:convert';
+import 'dart:core';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(_widgetFromRoute(window.defaultRouteName));
+
+Widget _widgetFromRoute(String url) {
+  String url = window.defaultRouteName;
+// route名称
+  String route =
+      url.indexOf('?') == -1 ? url : url.substring(0, url.indexOf('?'));
+// 参数Json字符串
+  String paramsJson =
+      url.indexOf('?') == -1 ? '{}' : url.substring(url.indexOf('?') + 1);
+// 解析参数
+  Map<String, dynamic> params = json.decode(paramsJson);
+
+  switch (route) {
+    case "route1":
+      debugPrint("route1-->$params");
+      return MyApp();
+    case "route2":
+      return MyApp2();
+    default:
+      return MyApp();
+  }
+}
+
+class MyApp2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Myapp2",
+      home: Scaffold(
+        body: Container(
+          child: Center(
+            child:
+                Text("MyApp2", style: TextStyle(fontStyle: FontStyle.italic)),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

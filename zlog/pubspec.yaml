@@ -1,7 +1,7 @@
 name: zlog
 description: A new flutter plugin project.
 version: 0.0.1
-#author: zcwfeng@gmail.com
+author: David <zcwfeng@gmail.com>
 homepage: https://github.com/zcwfeng/flutter_tutorial.git
 
 environment:

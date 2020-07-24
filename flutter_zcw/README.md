@@ -1,6 +1,6 @@
 # flutter_zcw
 
-A new flutter module project.
+zcw Flutter Model
 
 ## Getting Started
 
